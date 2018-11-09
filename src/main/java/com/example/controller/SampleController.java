@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
-import com.example.pojo.SampleJSON;
+import com.example.pojo.Document;
 
 @RestController
 public class SampleController {
@@ -14,11 +14,10 @@ public class SampleController {
 
     @RequestMapping(path="/documents", method= RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
-    public SampleJSON postCustomer(@RequestBody SampleJSON[] document){
-    	for(SampleJSON json : document) {
-    		System.out.println(json);
-    	}
-		return null;
+    public Document postCustomer(@RequestBody Document document){
+    	
+    	System.out.println(document);
+    	return null;
         //return customerService.createCustomer(customer);
     }
 }
